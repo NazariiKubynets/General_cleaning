@@ -1,0 +1,10 @@
+{
+   "comments.useRelativeTime": true,
+   "comments.openView": "never",
+   "html.autoCreateQuotes": true,
+   "html.format.indentHandlebars": false,
+   "git.useIntegratedAskPass": false,
+   "cSpell.languageSettings": [
+      
+   ]
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Start</title>
+	<meta name="description" content="Startup HTML Optimized">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="img/favicon.ico">
+	<meta property="og:image" content="img/preview.jpg">
+	<link rel="stylesheet" href="css/app.min.css?v=1">
+	<script src="js/app.min.js" defer></script>
+
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header__container container">
+			<div class="header__logo">
+				<img src="img/header/logo1.svg" alt="logo">
+			</div>
+			<div class="header__hamburger">
+				<span></span>
+			</div>
+			<nav class="header__list">
+				<ul>
+					<li>
+						<div class="show">
+							<p>Cleaning Services</p>
+							<img src="img/header/Vector 1.svg" alt="">
+						</div>
+						<ul class="list">
+							<li><a href="index.html">Commercial Cleaning Services</a></li>
+							<li><a href="factory.html">FactoryCleaning Services</a></li>
+							<li><a href="warehouse.html">Warehouse Cleaning Services</a></li>
+							<li><a href="meat.html">Meat And Poultry Production Line Cleaning</a></li>
+							<li><a href="sanitation.html">Sanitation Cleaning Services</a></li>
+							<li><a href="notFound.html">Emergency cleaning Services</a></li>
+						</ul>
+					</li>
+					<li><a href="notFound.html">Locations we serve</a></li>
+					<li><a href="notFound.html">Industries</a></li>
+					<li>
+						<div class="show">
+							<p>About Us</p>
+							<img src="img/header/Vector 1.svg" alt="">
+						</div>
+						<ul class="list">
+							<li><a href="notFound.html">Who We Are</a></li>
+							<li><a href="notFound.html">Careers</a></li>
+						</ul>
+					</li>
+					<li><a href="blog.html">Blog</a></li>
+					<li><a href="contacts.html">Contact</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="breadcrumbs">
+		<div class="breadcrumbs__container container">
+			<a href="index.html">Home</a>
+			<svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+				<path d="M5.25 11L8.75 7.5L5.25 4" stroke="#1E1E23" stroke-opacity="0.5" stroke-linecap="round"
+					stroke-linejoin="round" />
+			</svg>
+			<span class="breadcrumbs__current">Contact</span>
+		</div>
+	</div>
+
+	<section class="contact">
+		<div class="contact__container container">
+			<h1>Contacts</h1>
+			<div class="contact__content">
+				<div class="contact__form">
+					<h4>Send a Message</h4>
+					<form action="#" class="form" method="POST">
+						<div class="contact__form_row">
+							<div class="contact__item form__item">
+								<label for="formName" class="form__label">Name<span>*</span></label>
+								<input id="formName" type="text" name="name" placeholder="Name" class="form__input _req">
+							</div>
+							<div class="contact__item form__item">
+								<label for="formMail">Email<span>*</span></label>
+								<input id="formMail" type="email" name="mail" placeholder="Email" class="form__input _req">
+							</div> 
+						</div>
+						<div class="contact__item form__item">
+							<label for="formMessage" class="form__label">Message<span>*</span></label>
+							<textarea name="message" id="formMessage" placeholder="Message" class="form__textarea"></textarea>
+						</div>
+						<div class="form__btn ">
+							<button type="submit" class="contact__btn btn" name="submit">Submit</button>
+						</div>
+					</form>
+				</div>
+				<hr>
+				<div class="contact__data">
+					<div class="contact__call">
+						<h4>Call Us</h4>
+						<div class="contact__number">
+							<div>
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M16.5625 17.5C14.8681 17.5 13.184 17.0833 11.5104 16.25C9.83681 15.4167 8.33333 14.3333 7 13C5.66667 11.6667 4.58333 10.1632 3.75 8.48958C2.91667 6.81597 2.5 5.13194 2.5 3.4375C2.5 3.17361 2.59028 2.95139 2.77083 2.77083C2.95139 2.59028 3.17361 2.5 3.4375 2.5H6.35417C6.54861 2.5 6.71875 2.56597 6.86458 2.69792C7.01042 2.82986 7.10417 3.00694 7.14583 3.22917L7.70833 5.85417C7.73611 6.04861 7.73264 6.22569 7.69792 6.38542C7.66319 6.54514 7.59028 6.68056 7.47917 6.79167L5.39583 8.89583C6.17361 10.1875 7.04514 11.3125 8.01042 12.2708C8.97569 13.2292 10.0694 14.0417 11.2917 14.7083L13.2708 12.6667C13.4097 12.5139 13.5694 12.4062 13.75 12.3438C13.9306 12.2812 14.1111 12.2708 14.2917 12.3125L16.7708 12.8542C16.9792 12.8958 17.1528 13 17.2917 13.1667C17.4306 13.3333 17.5 13.5278 17.5 13.75V16.5625C17.5 16.8264 17.4097 17.0486 17.2292 17.2292C17.0486 17.4097 16.8264 17.5 16.5625 17.5ZM4.77083 7.75L6.45833 6.04167L5.97917 3.75H3.75C3.75 4.29167 3.83333 4.88542 4 5.53125C4.16667 6.17708 4.42361 6.91667 4.77083 7.75ZM12.4583 15.3125C13.0278 15.5764 13.6458 15.7917 14.3125 15.9583C14.9792 16.125 15.625 16.2222 16.25 16.25V14.0208L14.1042 13.5833L12.4583 15.3125Z" fill="#4682F0"/>
+								</svg>
+							</div>
+							<a href="">313 744 0805</a>
+							<p>/</p>
+							<a href="">313 720 7644</a>
+						</div>
+					</div>
+					<div class="contact__call">
+						<h4>Email Us</h4>
+						<div class="contact__number">
+							<div>
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M2.9165 16.6667C2.58317 16.6667 2.2915 16.5417 2.0415 16.2917C1.7915 16.0417 1.6665 15.75 1.6665 15.4167V4.58334C1.6665 4.25001 1.7915 3.95834 2.0415 3.70834C2.2915 3.45834 2.58317 3.33334 2.9165 3.33334H17.0832C17.4165 3.33334 17.7082 3.45834 17.9582 3.70834C18.2082 3.95834 18.3332 4.25001 18.3332 4.58334V15.4167C18.3332 15.75 18.2082 16.0417 17.9582 16.2917C17.7082 16.5417 17.4165 16.6667 17.0832 16.6667H2.9165ZM9.99984 10.375L2.9165 5.72918V15.4167H17.0832V5.72918L9.99984 10.375ZM9.99984 9.12501L16.9998 4.58334H3.02067L9.99984 9.12501ZM2.9165 5.72918V4.58334V15.4167V5.72918Z" fill="#4682F0"/>
+								</svg>
+							</div>
+							<a href="">vbilous@general-clean.com</a>
+							<p>/</p>
+							<a href="">info@general-clean.com</a>
+						</div>
+					</div>
+					<div class="contact__call">
+						<h4>Visit Us</h4>
+						<div class="contact__number">
+							<div>
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M10.0002 9.79169C10.4029 9.79169 10.7467 9.64933 11.0314 9.3646C11.3161 9.07988 11.4585 8.73613 11.4585 8.33335C11.4585 7.93058 11.3161 7.58683 11.0314 7.3021C10.7467 7.01738 10.4029 6.87502 10.0002 6.87502C9.59738 6.87502 9.25363 7.01738 8.96891 7.3021C8.68419 7.58683 8.54183 7.93058 8.54183 8.33335C8.54183 8.73613 8.68419 9.07988 8.96891 9.3646C9.25363 9.64933 9.59738 9.79169 10.0002 9.79169ZM10.0002 16.6875C11.8474 15.007 13.212 13.4827 14.0939 12.1146C14.9759 10.7465 15.4168 9.54169 15.4168 8.50002C15.4168 6.86113 14.8925 5.52085 13.8439 4.47919C12.7953 3.43752 11.5141 2.91669 10.0002 2.91669C8.48627 2.91669 7.20502 3.43752 6.15641 4.47919C5.1078 5.52085 4.5835 6.86113 4.5835 8.50002C4.5835 9.54169 5.03488 10.7465 5.93766 12.1146C6.84044 13.4827 8.19461 15.007 10.0002 16.6875ZM10.0002 18.3334C7.76405 16.4306 6.09391 14.6632 4.98975 13.0313C3.88558 11.3993 3.3335 9.88891 3.3335 8.50002C3.3335 6.41669 4.00363 4.75696 5.34391 3.52085C6.68419 2.28474 8.23627 1.66669 10.0002 1.66669C11.7641 1.66669 13.3161 2.28474 14.6564 3.52085C15.9967 4.75696 16.6668 6.41669 16.6668 8.50002C16.6668 9.88891 16.1147 11.3993 15.0106 13.0313C13.9064 14.6632 12.2363 16.4306 10.0002 18.3334Z" fill="#4682F0"/>
+								</svg>
+							</div>
+							<a href="">2225 Belmont at, Hamtramck, mi 48212</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="maps">
+		<div class="maps__container container">
+			<div class="maps__img img">
+				<img src="img/contact-maps.jpg" alt="contact-maps">
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="footer__container container">
+			<div class="footer__row">
+				<div class="footer__logo">
+					<img src="img/footer/footer_logo.svg" alt="logo">
+					<div>
+						<p>Mon - Sat: 10:00 AM – 8:00 PM</p>
+						<p>Sun: Closed</p>
+					</div>
+				</div>
+				<div class="footer__connection">
+					<h5>2225 Belmont at, <br> Hamtramck, mi 48212</h5>
+					<div class="footer__support">
+						<a href="#">+313 744 0805</a>
+						<a href="#">+313 720 7644</a>
+						<a href="#">vbilous@general-clean.com</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer__different">
+				<div class="footer__menu">
+					<div class="footer__servises">
+						<h6>Cleaning Services</h6>
+						<p>Commercial Cleaning Services</p>
+						<p>Factory Cleaning Services</p>
+						<p>Meat And Poultry Production Line Cleaning</p>
+						<p>Sanitation Cleaning Services</p>
+						<p>Emergency Cleaning Services</p>
+					</div>
+					<div class="footer__menu_row">
+						<div>
+							<h6 class="footer__location">Locations we serve</h6>
+							<h6>Indrustries</h6>
+						</div>
+						<div>
+							<div class="footer__aboutUs">
+								<h6>About Us</h6>
+								<p>Who We Are</p>
+								<p>Careers</p>
+							</div>
+							<h6>Blog</h6>
+						</div>
+					</div>
+					<div>
+						<h6>Contact</h6>
+						<h6>FAQ</h6>
+					</div>
+				</div>
+				<div class="footer__info">
+					<p>© 2022 General Cleaning Sanitation. All rights reserved</p>
+					<div class="footer__data">
+						<p>Sitemap</p>
+						<p>Privacy Policy</p>
+						<p>Accessibility Statement</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer> 
+
+</body>
+
+</html>
