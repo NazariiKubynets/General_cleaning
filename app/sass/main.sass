@@ -34,13 +34,10 @@
 	border: 0
 
 	&:hover
-		// border: 1px solid $accent
-		background: $accent
+		background: #1e1e23d8
 		color: #fff
 
 	&:active
-		// pading: 1px solid #fff
-		background: $accent
 		color: #fff
 
 .img
@@ -931,6 +928,10 @@
 
 .forma
 	background: #F6F6F6
+
+	+r(767)
+		margin-bottom: 50px
+
 	&__container
 		display: flex
 		justify-content: center
@@ -1262,16 +1263,21 @@
 		&_row
 			display: flex
 			gap: 25px
+			flex: 1
+
+			+r(767)
+				align-items: start
 
 			+r(576)
 				flex-direction: column
-				align-items: start
 
 	&__item
 		margin-bottom: 0 !important
+		flex: 1
 
 		+r(767)
 			flex-direction: column
+			width: 100%
 
 		label
 			color: $dark
@@ -1334,6 +1340,9 @@
 			padding: 0 10px
 		p
 			color: rgba(30, 30, 35, 0.20)
+
+	&__btn
+		border-radius: 25px 0px !important
 
 .maps
 	margin-bottom: 80px
@@ -1726,6 +1735,11 @@
 
 		&._error
 			border: 1px solid #FF3A3A
+			color: #FF3A3A
+
+	&_phone
+		border: 1px solid #FF3A3A
+		color: #FF3A3A
 
 	&__textarea
 		width: 100%
@@ -1749,11 +1763,15 @@
 			width: 100%
 			display: flex
 			justify-content: center
-
-		
+		&._error
+				background: #FF3A3A
 
 		&_button
 			border-radius: 0px
+
+			&._error
+				background-color: #FF3A3A
+
 			+r(767)
 				width: 100%
 				height: auto

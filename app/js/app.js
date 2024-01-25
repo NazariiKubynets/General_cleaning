@@ -135,47 +135,47 @@ document.addEventListener("DOMContentLoaded", function () {
 	//header menu show btn
 
 	const showElements = document.querySelectorAll('.show');
-const listElements = document.querySelectorAll('.list');
+	const listElements = document.querySelectorAll('.list');
 
-document.addEventListener('click', (e) => {
-    const isClickInsideList = Array.from(listElements).some(listElement => listElement.contains(e.target));
-    const isClickInsideShow = Array.from(showElements).some(showElement => showElement.contains(e.target));
+	document.addEventListener('click', (e) => {
+		const isClickInsideList = Array.from(listElements).some(listElement => listElement.contains(e.target));
+		const isClickInsideShow = Array.from(showElements).some(showElement => showElement.contains(e.target));
 
-    if (!isClickInsideList && !isClickInsideShow) {
-        listElements.forEach(listElement => {
-            listElement.classList.remove('active');
-        });
-        showElements.forEach(showElement => {
-            showElement.classList.remove('show--active');
-        });
-    }
-});
+		if (!isClickInsideList && !isClickInsideShow) {
+			listElements.forEach(listElement => {
+				listElement.classList.remove('active');
+			});
+			showElements.forEach(showElement => {
+				showElement.classList.remove('show--active');
+			});
+		}
+	});
 
-showElements.forEach(showElement => {
-    showElement.addEventListener('click', (e) => {
-        const list = showElement.nextElementSibling;
-        if (list && list.classList.contains('list')) {
-            const isActive = list.classList.contains('active');
+	showElements.forEach(showElement => {
+		showElement.addEventListener('click', (e) => {
+			const list = showElement.nextElementSibling;
+			if (list && list.classList.contains('list')) {
+				const isActive = list.classList.contains('active');
 
-            listElements.forEach(listElement => {
-                listElement.classList.remove('active');
-            });
-            showElements.forEach(otherShowElement => {
-                if (otherShowElement !== showElement) {
-                    otherShowElement.classList.remove('show--active');
-                }
-            });
+				listElements.forEach(listElement => {
+					listElement.classList.remove('active');
+				});
+				showElements.forEach(otherShowElement => {
+					if (otherShowElement !== showElement) {
+						otherShowElement.classList.remove('show--active');
+					}
+				});
 
-            if (!isActive) {
-                list.classList.add('active');
-                showElement.classList.toggle('show--active'); // Toggle 'show--active' class for the clicked 'show' element
-            } else {
-                showElement.classList.remove('show--active'); // Remove 'show--active' class if already active
-            }
-        }
-        e.stopPropagation();
-    });
-});
+				if (!isActive) {
+					list.classList.add('active');
+					showElement.classList.toggle('show--active'); // Toggle 'show--active' class for the clicked 'show' element
+				} else {
+					showElement.classList.remove('show--active'); // Remove 'show--active' class if already active
+				}
+			}
+			e.stopPropagation();
+		});
+	});
 
 
 
@@ -267,15 +267,27 @@ showElements.forEach(showElement => {
 
 			function formValidate(item) {
 				let error = 0;
-				let formReq = formParent.querySelectorAll('._req');
+				let formReq = item.querySelectorAll('._req');
+				const formPhones = item.querySelectorAll('._phone');
+
+				formPhones.forEach(input => {
+					if (!phoneTest(input)) {
+						formAddErrorPhone(input);
+						error++;
+					}
+				});
 
 				for (let index = 0; index < formReq.length; index++) {
 					const input = formReq[index];
-					// formRemoveError(input);
 
 					if (input.classList.contains('_email')) {
 						if (emailTest(input)) {
 							formAddErrorEmail(input);
+							error++;
+						}
+					} else if (input.classList.contains('_message')) {
+						if (!messageTest(input)) {
+							formAddErrorMessage(input);
 							error++;
 						}
 					} else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
@@ -288,6 +300,7 @@ showElements.forEach(showElement => {
 						}
 					}
 				}
+
 				return error;
 			}
 
@@ -346,34 +359,87 @@ showElements.forEach(showElement => {
 				}
 			})
 
-			function formAddError(input) {
-				let div = document.createElement('div');
-				div.classList.add("form__error");
-				div.innerHTML = "name must be between 2 and 20 characters";
+			function formAddErrorPhone(input) {
+				if (!input.parentElement.querySelector('.form__error')) {
+					let div = document.createElement('div');
+					div.classList.add("form__error");
+					div.innerHTML = "Invalid phone number entered";
 
-				input.parentElement.append(div);
-				input.parentElement.classList.add('_error');
-				input.classList.add('_error');
+					input.parentElement.append(div);
+					input.parentElement.classList.add('_error');
+					input.classList.add('_error');
+					updateButtonColor();
+				}
+			}
+
+			function formAddErrorMessage(input) {
+				if (!input.parentElement.querySelector('.form__error')) {
+					let div = document.createElement('div');
+					div.classList.add("form__error");
+					div.innerHTML = "message must be between 40 and 300 characters";
+
+					input.parentElement.appendChild(div);
+					input.parentElement.classList.add('_error');
+					input.classList.add('_error');
+					updateButtonColor();
+				}
+			}
+
+			function formAddError(input) {
+				if (!input.parentElement.querySelector('.form__error')) {
+					let div = document.createElement('div');
+					div.classList.add("form__error");
+					div.innerHTML = "Name must be between 2 and 20 characters";
+
+					input.parentElement.append(div);
+					input.parentElement.classList.add('_error');
+					input.classList.add('_error');
+					updateButtonColor();
+				}
 			}
 
 			function formAddErrorEmail(input) {
-				let div = document.createElement('div');
-				div.classList.add("form__error");
-				div.innerHTML = "Введите свою почту";
+				if (!input.parentElement.querySelector('.form__error')) {
+					let div = document.createElement('div');
+					div.classList.add("form__error");
+					div.innerHTML = "Invalid email entered";
 
-				input.parentElement.append(div);
-				input.parentElement.classList.add('_error');
-				input.classList.add('_error');
+					input.parentElement.append(div);
+					input.parentElement.classList.add('_error');
+					input.classList.add('_error');
+					updateButtonColor();
+				}
 			}
 
 			function formAddErrorCheck(input) {
-				let div = document.createElement('div');
-				div.classList.add("form__error");
-				div.innerHTML = "Согласие на обработку персональных данных";
+				if (!input.parentElement.querySelector('.form__error')) {
+					let div = document.createElement('div');
+					div.classList.add("form__error");
+					div.innerHTML = "Согласие на обработку персональных данных";
 
-				input.parentElement.append(div);
-				input.parentElement.classList.add('_error');
-				input.classList.add('_error');
+					input.parentElement.append(div);
+					input.parentElement.classList.add('_error');
+					input.classList.add('_error');
+					updateButtonColor();
+				}
+			}
+
+			function updateButtonColor() {
+				const submitButton = document.querySelector('.form__btn_button');
+				if (document.querySelector('.form__error')) {
+					submitButton.classList.add('_error');
+				} else {
+					submitButton.classList.remove('_error');
+				}
+			}
+
+			function phoneTest(input) {
+				// Допустимий формат: +380123456789
+				return /^\+\d{12}$/.test(input.value);
+			}
+
+			function messageTest(input) {
+				return input.value.length >= 40 && input.value.length <= 300;
 			}
 
 			function emailTest(input) {
